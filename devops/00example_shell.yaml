@@ -1,0 +1,10 @@
+- name: Example shell PLAYBOOK
+  hosts: localhost
+  tasks:
+    - name: example shell TASK
+      ansible.builtin.shell:
+        cmd: ls -la
+      register: my_dir_list ##A: save out, err and status to Ansible variable
+    - name: example debug TASK
+      ansible.builtin.debug:
+        msg: "The list of files is {{ my_dir_list }}"
