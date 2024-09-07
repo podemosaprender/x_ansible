@@ -1,0 +1,12 @@
+- name: Install node and npm   
+  hosts: all
+  tasks:         
+  - name: install packages node and npm
+    become: true
+    ansible.builtin.apt:
+      pkg:
+      - nodejs
+      - npm
+      update_cache: true
+      cache_valid_time: 3600
+

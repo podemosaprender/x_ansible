@@ -22,5 +22,5 @@ jobs:
         uses: actions/checkout@v3
 ###S: Ansible {
       - name: Run playbook
-        run: ansible-playbook ./devops/*.yaml
+        run: ansible-playbook --connection=local --inventory localhost, ./devops/ansible/playbooks/*yaml
 ###S: Ansible }
